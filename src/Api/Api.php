@@ -10,13 +10,13 @@ namespace Core\Api;
 
 use Zend\ServiceManager\ServiceManager;
 use Zend\Form\Element\File as FileElement;
-use Zend\File\Transfer\Adapter\Http;
 use Zend\Authentication\Storage\Session;
 use Zend\Session\Container;
 use Zend\Authentication\AuthenticationService;
 use Zend\Paginator\Paginator;
 use Zend\Paginator\Adapter\DbSelect;
 use Zend\Db\ResultSet\ResultSet;
+use Zend\Authentication\Result;
 
 class Api
 {
@@ -181,6 +181,14 @@ class Api
         // Translate email
         $userTable = self::_()->getDbTable('users', 'user');
         $user = $userTable->fetchRow(array('email' => $identity));
+
+        if($user == null)
+        {
+            return new Result(
+                Result::FAILURE_IDENTITY_NOT_FOUND,
+                null,
+                ['Invalid credentials.']);
+        }
 
         $authAdapter = $this->getAuthAdapter()
             ->setIdentity($user->getIdentity())
