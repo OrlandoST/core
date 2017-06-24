@@ -7,7 +7,7 @@
  * @author Berdimurat Masaliev <muratmbt@gmail.com>
  */
 
-namespace Azbe\Image;
+namespace Core\Image;
 
 class Exception extends \Exception{
     

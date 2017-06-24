@@ -1,14 +1,14 @@
 <?php
 /**
  * Storage Service Abstract
- * @copyright (c) 2013, Azbe.net
+ * @copyright (c) 2013, Core.net
  * @author Berdimurat Masaliev <muratmbt@gmail.com>
  */
 
-namespace Azbe\Storage\Service;
+namespace Core\Storage\Service;
 
-use Azbe\Api\Api;
-use Azbe\Storage\Service\Exception;
+use Core\Api\Api;
+use Core\Storage\Service\Exception;
 use Zend\Form\Element\File as FileElement;
 use Zend\File\Transfer\Adapter\Http;
 use Zend\File\Transfer\Exception\InvalidArgumentException;

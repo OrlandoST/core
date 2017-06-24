@@ -50,7 +50,7 @@ class Local extends AbstractService{
     public function generatePath($params){
         extract($params);
         
-        $path = 'public' . '/';
+        $path = 'files' . '/';
         $path .= $parent_type . '/';
         $path .= $parent_id . '/';
 

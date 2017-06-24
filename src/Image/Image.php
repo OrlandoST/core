@@ -1,14 +1,14 @@
 <?php
 /**
- * Azbe Image
+ * Core Image
  * 
- * @copyright (c) 2013, Azbe.net
+ * @copyright (c) 2013, Core.net
  * @author Berdimurat Masaliev <muratmbt@gmail.com>
  */
 
-namespace Azbe\Image;
+namespace Core\Image;
 
-use Azbe\Image\Exception as ImageException;
+use Core\Image\Exception as ImageException;
 
 abstract class Image {
 
@@ -37,7 +37,7 @@ abstract class Image {
      * 
      * @param string $adapter Force this adapter
      * @param array $options
-     * @return Azbe\Image
+     * @return Core\Image
      */
     static public function factory($options = array(), $adapter = 'gd') {
         $hasGd = function_exists('gd_info');
@@ -143,52 +143,52 @@ abstract class Image {
     // Actions
 
     /**
-     * @return Azbe\Image
+     * @return Core\Image
      */
     abstract public function create($width, $height);
 
     /**
-     * @return Azbe\Image
+     * @return Core\Image
      */
     abstract public function open($file);
 
     /**
-     * @return Azbe\Image
+     * @return Core\Image
      */
     abstract public function destroy();
 
     /**
-     * @return Azbe\Image
+     * @return Core\Image
      */
     abstract public function write($file = null);
 
     /**
-     * @return Azbe\Image
+     * @return Core\Image
      */
     abstract public function output();
 
     /**
-     * @return Azbe\Image
+     * @return Core\Image
      */
     abstract public function resize($w, $h, $aspect = true);
 
     /**
-     * @return Azbe\Image
+     * @return Core\Image
      */
     abstract public function crop($x, $y, $w, $h);
 
     /**
-     * @return Azbe\Image
+     * @return Core\Image
      */
     abstract public function resample($srcX, $srcY, $srcW, $srcH, $dstW, $dstH);
 
     /**
-     * @return Azbe\Image
+     * @return Core\Image
      */
     abstract public function rotate($angle);
 
     /**
-     * @return Azbe\Image
+     * @return Core\Image
      */
     abstract public function flip($horizontal = true);
 

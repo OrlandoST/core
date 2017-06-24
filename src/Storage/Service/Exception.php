@@ -6,7 +6,7 @@
  * @author Berdimurat Masaliev <muratmbt@gmail.com>
  */
 
-namespace Azbe\Storage\Service;
+namespace Core\Storage\Service;
 
 class Exception extends \Exception{
     
