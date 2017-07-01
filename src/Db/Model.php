@@ -181,16 +181,16 @@ class Model extends RowGateway
     {
         if (empty($this->photo_id)) {
             if($type == 'thumb.normal'){
-                return Api::_()->sm()->get('request')->getBaseUrl().'/externals/images/nophoto_thumb_profile.png';
+                return Api::_()->sm()->get('request')->getBaseUrl().'/img/nophoto_thumb_profile.png';
             }
             else{
-                return Api::_()->sm()->get('request')->getBaseUrl().'/externals/images/nophoto_thumb_profile.png';
+                return Api::_()->sm()->get('request')->getBaseUrl().'/img/nophoto_thumb_profile.png';
             }
         }
 
         $file = Api::_()->getDbtable('files')->getFile($this->photo_id, $type);
         if (!$file) {
-            return Api::_()->sm()->get('request')->getBaseUrl().'/externals/images/nophoto_thumb_profile.png';
+            return Api::_()->sm()->get('request')->getBaseUrl().'/img/nophoto_thumb_profile.png';
         }
 
         return $file->map();
